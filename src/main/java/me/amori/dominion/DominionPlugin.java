@@ -7,8 +7,12 @@ import java.util.logging.Level;
 
 public class DominionPlugin extends JavaPlugin {
 
+    public static DominionPlugin INSTANCE;
+
     @Override
     public void onEnable() {
+        INSTANCE = this;
+
         Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
         this.getLogger().log(Level.INFO, "Dominion plugin enabled!");
     }
@@ -16,5 +20,8 @@ public class DominionPlugin extends JavaPlugin {
     @Override
     public void onDisable() {
 
+
+        // Set null after plugin is disabled completely
+        INSTANCE = null;
     }
 }
