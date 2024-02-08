@@ -20,20 +20,26 @@ public class PlayerJoinListener implements Listener {
         PersistentDataContainer dataContainer = plr.getPersistentDataContainer();
 
         // If the player does not have an auto assigned clan it will run the following below
+        ClanType clanType;
         if(!dataContainer.has(key, PersistentDataType.STRING)) {
             // Selecting the random clan type for the player
             ClanType[] clanTypes = ClanType.values();
             Random random = new Random();
             int selected = random.nextInt(clanTypes.length);
-            ClanType selectedType =  clanTypes[selected];
+            clanType = clanTypes[selected];
 
             // Saving the Clan Type to the player
-            dataContainer.set(key, PersistentDataType.STRING, selectedType.name());
+            dataContainer.set(key, PersistentDataType.STRING, clanType.name());
 
             // Notifies the player of their randomly assigned clan type
-            plr.sendMessage("You are apart of the " + selectedType.name() + " Clan");
+            plr.sendMessage("You are apart of the " + clanType.name() + " Clan");
         } else {
-            plr.sendMessage("You are already apart of the " + dataContainer.get(key, PersistentDataType.STRING) + " clan! :)");
+            clanType = ClanType.valueOf(dataContainer.get(key, PersistentDataType.STRING));
+            plr.sendMessage("You are already apart of the " + clanType.name() + " clan! :)");
+        }
+
+        if(clanType.hasPotionEffect()) {
+            plr.addPotionEffect(clanType.getPotionEffect());
         }
     }
 }
