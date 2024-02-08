@@ -8,6 +8,7 @@ public class DominionPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        // test
         this.getLogger().log(Level.INFO, "Dominion plugin enabled!");
     }
 
