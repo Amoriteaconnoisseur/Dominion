@@ -34,6 +34,7 @@ public class DominionPlugin extends JavaPlugin {
 
         Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
         Bukkit.getPluginManager().registerEvents(new PotionEffectListener(), this);
+        Bukkit.getPluginManager().registerEvents(new ItemPickupListener(), this);
         this.getLogger().log(Level.INFO, "Dominion plugin enabled!");
 
     }
