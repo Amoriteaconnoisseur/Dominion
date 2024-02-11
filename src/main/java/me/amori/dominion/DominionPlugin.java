@@ -16,8 +16,20 @@ public class DominionPlugin extends JavaPlugin {
     public static NamespacedKey CLAN_KEY;
 
     public static void setClan(Player plr, ClanType clan) {
+        ClanType oldClan = getClan(plr);
+
+        // Update clan
         PersistentDataContainer dataContainer = plr.getPersistentDataContainer();
         dataContainer.set(CLAN_KEY, PersistentDataType.STRING, clan.name());
+
+        // Update potion effect
+        if(oldClan != null && oldClan.hasPotionEffect()) {
+            plr.removePotionEffect(oldClan.getPotionEffect().getType());
+        }
+
+        if(clan.hasPotionEffect()) {
+            plr.addPotionEffect(clan.getPotionEffect());
+        }
     }
 
     // Returns the player's clan if set, otherwise null
@@ -32,11 +44,15 @@ public class DominionPlugin extends JavaPlugin {
         INSTANCE = this;
         CLAN_KEY = new NamespacedKey(this, "clan");
 
+        // Register commands
+        getCommand("setclan").setExecutor(new ClanSetCommand());
+
+        // Register listeners
         Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
         Bukkit.getPluginManager().registerEvents(new PotionEffectListener(), this);
         Bukkit.getPluginManager().registerEvents(new ItemPickupListener(), this);
-        this.getLogger().log(Level.INFO, "Dominion plugin enabled!");
 
+        this.getLogger().log(Level.INFO, "Dominion plugin enabled!");
     }
 
     @Override

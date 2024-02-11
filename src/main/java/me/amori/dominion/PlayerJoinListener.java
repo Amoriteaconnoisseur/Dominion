@@ -20,7 +20,7 @@ public class PlayerJoinListener implements Listener {
             // Selecting the random clan type for the player
             ClanType[] clanTypes = ClanType.values();
             Random random = new Random();
-            int selected = random.nextInt(clanTypes.length);
+            int selected = random.nextInt(ClanType.MAIN_CLANS);
             clanType = clanTypes[selected];
 
             // Saving the Clan Type to the player
@@ -30,10 +30,6 @@ public class PlayerJoinListener implements Listener {
             plr.sendMessage("You are apart of the " + clanType.name() + " Clan");
         } else {
             plr.sendMessage("You are already apart of the " + clanType.name() + " clan! :)");
-        }
-
-        if(clanType.hasPotionEffect()) {
-            plr.addPotionEffect(clanType.getPotionEffect());
         }
     }
 }
