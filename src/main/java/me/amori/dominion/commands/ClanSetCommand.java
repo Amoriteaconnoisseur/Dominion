@@ -1,5 +1,7 @@
-package me.amori.dominion;
+package me.amori.dominion.commands;
 
+import me.amori.dominion.ClanType;
+import me.amori.dominion.DominionPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

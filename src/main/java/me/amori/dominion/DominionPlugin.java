@@ -1,5 +1,7 @@
 package me.amori.dominion;
 
+import me.amori.dominion.commands.ClanPanelCommand;
+import me.amori.dominion.commands.ClanSetCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
@@ -46,6 +48,7 @@ public class DominionPlugin extends JavaPlugin {
 
         // Register commands
         getCommand("setclan").setExecutor(new ClanSetCommand());
+        getCommand("clan").setExecutor(new ClanPanelCommand());
 
         // Register listeners
         Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
