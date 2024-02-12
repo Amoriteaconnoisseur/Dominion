@@ -1,4 +1,4 @@
-package me.amori.dominion;
+package me.amori.teamtrims;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -15,7 +15,7 @@ public class PotionEffectListener implements Listener {
             return;
         }
 
-        ClanType clanType = DominionPlugin.getClan(plr);
+        ClanType clanType = TeamTrimsPlugin.getClan(plr);
         // Don't handle if clan doesn't have a potion effect
         if(!clanType.hasPotionEffect()) {
             return;

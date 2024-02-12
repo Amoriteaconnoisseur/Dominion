@@ -1,7 +1,7 @@
 package org.avaeriandev.utils;
 // Thank you Avaerian for letting me use this code
 
-import me.amori.dominion.Utils;
+import me.amori.teamtrims.Utils;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 

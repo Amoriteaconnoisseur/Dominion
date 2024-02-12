@@ -1,7 +1,7 @@
-package me.amori.dominion;
+package me.amori.teamtrims;
 
-import me.amori.dominion.commands.ClanPanelCommand;
-import me.amori.dominion.commands.ClanSetCommand;
+import me.amori.teamtrims.commands.ClanPanelCommand;
+import me.amori.teamtrims.commands.ClanSetCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
@@ -11,9 +11,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Level;
 
-public class DominionPlugin extends JavaPlugin {
+public class TeamTrimsPlugin extends JavaPlugin {
 
-    public static DominionPlugin INSTANCE;
+    public static TeamTrimsPlugin INSTANCE;
 
     public static NamespacedKey CLAN_KEY;
 

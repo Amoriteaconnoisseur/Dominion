@@ -1,6 +1,6 @@
-package me.amori.dominion.panel;
+package me.amori.teamtrims.panel;
 
-import me.amori.dominion.ClanType;
+import me.amori.teamtrims.ClanType;
 import org.avaeriandev.utils.Panel;
 import org.avaeriandev.utils.PanelIcon;
 import org.bukkit.Material;

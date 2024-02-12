@@ -1,8 +1,8 @@
 package org.avaeriandev.utils;
 // Thank  you Avaerian for letting me use this code
 
-import me.amori.dominion.DominionPlugin;
-import me.amori.dominion.Utils;
+import me.amori.teamtrims.TeamTrimsPlugin;
+import me.amori.teamtrims.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -33,7 +33,7 @@ public abstract class Panel implements Listener {
 
     private void setup() {
         this.layout = new HashMap<>();
-        Bukkit.getPluginManager().registerEvents(this, DominionPlugin.INSTANCE);
+        Bukkit.getPluginManager().registerEvents(this, TeamTrimsPlugin.INSTANCE);
     }
 
     protected void loadLayout(Map<Integer, PanelIcon> rawLayout) {

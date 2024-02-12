@@ -1,7 +1,7 @@
-package me.amori.dominion.commands;
+package me.amori.teamtrims.commands;
 
-import me.amori.dominion.ClanType;
-import me.amori.dominion.DominionPlugin;
+import me.amori.teamtrims.ClanType;
+import me.amori.teamtrims.TeamTrimsPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -36,13 +36,13 @@ public class ClanSetCommand implements CommandExecutor {
         }
 
         // Prevent reassigning player to same clan
-        if(clanType == DominionPlugin.getClan(plr)) {
+        if(clanType == TeamTrimsPlugin.getClan(plr)) {
             sender.sendMessage("Player " + args[0] + " is already part of " + args[1] + "!");
             return false;
         }
 
         // Update clan for player
-        DominionPlugin.setClan(plr, clanType);
+        TeamTrimsPlugin.setClan(plr, clanType);
         sender.sendMessage("Clan updated for " + args[0] + " successfully!");
         return true;
     }

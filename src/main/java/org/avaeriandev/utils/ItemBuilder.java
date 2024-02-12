@@ -1,7 +1,7 @@
 package org.avaeriandev.utils;
 //Thank you for the code Avaerian
 
-import me.amori.dominion.Utils;
+import me.amori.teamtrims.Utils;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;

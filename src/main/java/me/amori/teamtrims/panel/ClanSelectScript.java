@@ -1,8 +1,8 @@
-package me.amori.dominion.panel;
+package me.amori.teamtrims.panel;
 
-import me.amori.dominion.ClanType;
-import me.amori.dominion.DominionPlugin;
-import me.amori.dominion.Utils;
+import me.amori.teamtrims.ClanType;
+import me.amori.teamtrims.TeamTrimsPlugin;
+import me.amori.teamtrims.Utils;
 import org.avaeriandev.utils.IconScript;
 import org.bukkit.entity.Player;
 
@@ -16,7 +16,7 @@ public class ClanSelectScript implements IconScript {
 
     @Override
     public void run(Player plr) {
-        DominionPlugin.setClan(plr, clan);
+        TeamTrimsPlugin.setClan(plr, clan);
         plr.sendMessage(Utils.formatColor("&aSelected the " + clan.name().toLowerCase() + " clan!"));
         plr.closeInventory();
     }

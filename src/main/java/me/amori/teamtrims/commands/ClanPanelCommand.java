@@ -1,8 +1,8 @@
-package me.amori.dominion.commands;
+package me.amori.teamtrims.commands;
 
-import me.amori.dominion.ClanType;
-import me.amori.dominion.DominionPlugin;
-import me.amori.dominion.panel.ClanSelectionPanel;
+import me.amori.teamtrims.ClanType;
+import me.amori.teamtrims.TeamTrimsPlugin;
+import me.amori.teamtrims.panel.ClanSelectionPanel;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -19,7 +19,7 @@ public class ClanPanelCommand implements CommandExecutor {
             return false;
         }
 
-        ClanType clan = DominionPlugin.getClan(plr);
+        ClanType clan = TeamTrimsPlugin.getClan(plr);
         if(clan != null && clan != ClanType.NEUTRAL){
             sender.sendMessage("You already selected " + clan.name().toLowerCase() + " clan");
             return false;

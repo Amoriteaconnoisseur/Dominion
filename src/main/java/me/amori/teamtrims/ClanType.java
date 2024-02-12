@@ -1,4 +1,4 @@
-package me.amori.dominion;
+package me.amori.teamtrims;
 
 import org.bukkit.inventory.meta.trim.ArmorTrim;
 import org.bukkit.inventory.meta.trim.TrimMaterial;

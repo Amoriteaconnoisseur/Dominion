@@ -1,4 +1,4 @@
-package me.amori.dominion;
+package me.amori.teamtrims;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -15,7 +15,7 @@ public class PlayerJoinListener implements Listener {
         Player plr = e.getPlayer();
 
         // If the player does not have an auto assigned clan it will run the following below
-        ClanType clanType = DominionPlugin.getClan(plr);
+        ClanType clanType = TeamTrimsPlugin.getClan(plr);
         if(clanType == null) {
             // Selecting the random clan type for the player
             ClanType[] clanTypes = ClanType.values();
@@ -24,7 +24,7 @@ public class PlayerJoinListener implements Listener {
             clanType = clanTypes[selected];
 
             // Saving the Clan Type to the player
-            DominionPlugin.setClan(plr, clanType);
+            TeamTrimsPlugin.setClan(plr, clanType);
 
             // Notifies the player of their randomly assigned clan type
             plr.sendMessage("You are apart of the " + clanType.name() + " Clan");
